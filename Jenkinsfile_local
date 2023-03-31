@@ -17,7 +17,7 @@ node{
    }
 
     stage('5. Deploy Docker image to Tomcat'){
-        sh "docker run -p 8888:8080 -d --name HelloWorld-DockerDemo demo-hello:v1"
+        sh "docker run -di -p 8888:8080 --name HelloWorld-DockerDemo demo-hello:v1"
     }
 
    /* stage('6. Upload Docker to Docker repo'){
