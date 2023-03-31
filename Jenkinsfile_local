@@ -1,27 +1,24 @@
 node{
+
     stage('1. SCM Checkout'){
-        sh "cd Devops/"
-        sh "pwd"
-    }
-    /*stage('2. SCM Checkout'){
-        sh "git clone https://github.com/Rootbie/helloworld.git"
+        sh "git clone https://github.com/KryCool/Docker_Jenkins_Demo.git"
     }
 
     stage('2. Maven build'){
-        sh "mvn clean package -f DevOps/helloworld/pom.xml"
+        sh "mvn clean package -f Docker_Jenkins_Demo/pom.xml"
     }
 
     stage('3. Build Docker image'){
-        sh "docker build -t trinh00thien/demo-hello:v1 DevOps/helloworld"
+        sh "docker build -t demo-hello:v1 Docker_Jenkins_Demo/"
     }
 
     stage('4. Remove container'){
-        sh "docker rm -f web-hello"
+        sh "docker rm -f ${docker ps -aq}"
     }
 
     stage('5. Deploy Docker image to Tomcat'){
-        sh "docker run -p 23456:8080 -d --name web-hello trinh00thien/demo-hello:v1"
-    }*/
+        sh "docker run -p 8888:8080 -d --name HelloWorld-DockerDemo demo-hello:v1"
+    }
 
    /* stage('6. Upload Docker to Docker repo'){
         sh "docker push trinh00thien/demo-hello:v1"
