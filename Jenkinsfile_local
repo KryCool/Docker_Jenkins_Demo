@@ -12,9 +12,9 @@ node{
         sh "docker build -t demo-hello:v1 Docker_Jenkins_Demo/"
     }
 
-    stage('4. Remove container'){
-        sh "docker rm -f \$(docker ps -aq)"
-    }
+//    stage('4. Remove container'){
+//        sh "docker rm -f \$(docker ps -aq)"
+//   }
 
     stage('5. Deploy Docker image to Tomcat'){
         sh "docker run -p 8888:8080 -d --name HelloWorld-DockerDemo demo-hello:v1"
