@@ -13,7 +13,7 @@ node{
     }
 
     stage('4. Remove container'){
-        sh "docker rm -f demo-hello:v1"
+        sh "docker rm -f \$(docker ps -aq)"
    }
 
     stage('5. Deploy Docker image to Tomcat'){
