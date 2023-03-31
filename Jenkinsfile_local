@@ -1,6 +1,7 @@
 node{
 
     stage('1. SCM Checkout'){
+        deleteDir()
         sh "git clone https://github.com/KryCool/Docker_Jenkins_Demo.git"
     }
 
@@ -17,7 +18,7 @@ node{
    }
 
     stage('5. Deploy Docker image to Tomcat'){
-        sh "docker run -di -p 8888:8080 --name HelloWorld-DockerDemo demo-hello:v1"
+        sh "docker run -di -p 9999:8080 --name HelloWorld-DockerDemo demo-hello:v1"
     }
 
    /* stage('6. Upload Docker to Docker repo'){
