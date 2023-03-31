@@ -6,4 +6,4 @@ MAINTAINER "trinh.thien@hcl.com"
 
 COPY /webapp/target/webapp.war /usr/local/tomcat/webapps
 
-EXPOSE 8888
+EXPOSE 8080
