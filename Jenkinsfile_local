@@ -9,7 +9,7 @@ node{
     }
 
     stage('3. Build Docker image'){
-        sh "docker build -t demo-hello:v1 Docker_Jenkins_Demo/ ."
+        sh "docker build -t demo-hello:v1 Docker_Jenkins_Demo/"
     }
 
     stage('4. Remove container'){
